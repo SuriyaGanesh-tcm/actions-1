@@ -8,15 +8,20 @@ jobs:
         steps:
             - name: Take Local Copy
               uses: actions/checkout@v4
+
+            - name: Executing Shell Script
+              run: |
+                chmod +x ascii-script.sh
+                ./ascii-script.sh
             
-            - name: Install cowsay library
-              run: sudo apt-get install cowsay -y
+            # - name: Install cowsay library
+            #   run: sudo apt-get install cowsay -y
               
-            - name: Execute Cowsay cmd
-              run: cowsay -f dragon "Run for cover, Iam a DRAGON.....RAWR" >> dragon.txt
+            # - name: Execute Cowsay cmd
+            #   run: cowsay -f dragon "Run for cover, Iam a DRAGON.....RAWR" >> dragon.txt
 
-            - name: Text file exists
-              run: grep -i "dragon" dragon.txt
+            # - name: Text file exists
+            #   run: grep -i "dragon" dragon.txt
 
-            - name: Read file
-              run: cat dragon.txt
+            # - name: Read file
+            #   run: cat dragon.txt
